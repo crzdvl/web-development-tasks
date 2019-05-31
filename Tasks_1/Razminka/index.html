@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test page</title>
+  <style media="screen">
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .column {
+      font-size: 4rem;
+      color: white;
+      font-weight: bold;
+      font-family: Helvetica;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .floats {
+      overflow: hidden;
+      width: 25%;
+    }
+
+    /*First part of "Разминка", used float*/
+    .floats .column {
+      float: left;
+      width: 33.33%;
+    }
+
+    /*Second part of "Разминка", used inline-block*/
+    .blocks {
+      width: 25%;
+    }
+
+    .blocks .column {
+      display: inline-block;
+      width: 33.33%;
+      /*how to display correctly: https://ru.stackoverflow.com/questions/609992/%D0%9E%D1%82%D1%81%D1%82%D1%83%D0%BF%D1%8B-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8-%D1%81-inline-block */
+    }
+
+    /*Third part of "Разминка", used flex*/
+    .flexbox {
+      flex-direction: row;
+      justify-content: flex-start;
+      width: 25%;
+      /*Small guide: http://code.mu/css/flex-direction.html */
+    }
+
+    .flexbox .column {
+      display: inline-block;
+      width: 33.33%;
+    }
+
+    /*Fourth part of "Разминка", used grid*/
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 25%;
+      /*Small guide: https://tuhub.ru/posts/css-grid-complete-guide */
+    }
+
+  </style>
+</head>
+<body>
+  <section style="display: flex; flex-direction: row; justify-content: flex-start; width: 100%;"> <!--Small guide: https://ru.stackoverflow.com/questions/198307/div-%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D0%B2-%D0%BE%D0%B4%D0%BD%D1%83-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83 -->
+    <section class="floats">
+      <div class="column" style="background-color: #1abc9c">1</div>
+      <div class="column" style="background-color: #2ecc71">2</div>
+      <div class="column" style="background-color: #3498db">3</div>
+    </section>
+    <section class="blocks"><!--
+    --><div class="column" style="background-color: #f39c12">1</div><!--
+    --><div class="column" style="background-color: #d35400">2</div><!--
+    --><div class="column" style="background-color: #c0392b">3</div>
+    </section>
+    <section class="flexbox"><!--
+    --><div class="column" style="background-color: #16a085">1</div><!--
+    --><div class="column" style="background-color: #27ae60">2</div><!--
+    --><div class="column" style="background-color: #2980b9">3</div>
+    </section>
+    <section class="grid">
+      <div class="column" style="background-color: #f1c40f">1</div>
+      <div class="column" style="background-color: #e67e22">2</div>
+      <div class="column" style="background-color: #e74c3c">3</div>
+    </section>
+  </section>
+</body>
+</html>
