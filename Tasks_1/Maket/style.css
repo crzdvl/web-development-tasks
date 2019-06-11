@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 25px;
+    color: #3a595c;
+    text-align: center;
+}
+
+#container {
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+#header {
+  background-color: #3a595c;
+  min-height: 20vh;
+}
+
+#header p {
+  font-size: 55px;
+  color: #fff;
+}
+
+#primary {
+    float: left;
+    width: 20%;
+    background-color: #bcd9d7;
+    height: 70vh;
+}
+
+#content {
+    float: left;
+    width: 60%;
+    background-color: #7ba9a9;
+    height: 70vh;
+}
+
+#secondary {
+    float: left;
+    width: 20%;
+    background-color: #bcd9d7;
+    height: 70vh;
+}
+
+footer {
+  clear: both;
+  min-height: 15vh;
+  width: 100%;
+  background-color: #192e2f;
+  position: absolute;
+  bottom: 0;
+}
+
+/*https://vanseodesign.com/css/3-column-layout-code/*/
