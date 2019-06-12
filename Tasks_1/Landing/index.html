@@ -136,21 +136,42 @@
 
                     <input type="number" id="tentacles" name="tentacles"
                             min="100" max="900">
-                </div>
-                <input type="reset" value="Reset">
+                </div> 
                 <div>
                     <label for="site-search">Search the site:</label>
                     <input type="search" id="site-search" name="q"
                             aria-label="Search through site content">
                     <button>Search</button>
                 </div>
+                <div>
+                    <label for="appt">Choose a time for your meeting:</label>
 
+                    <input type="time" id="appt" name="appt"
+                            min="9:00" max="10:00" required>
+                    <span class="note">Office hours are 9am to 10am</span>
+                </div>
+                <div>
+                    <label for="url">Enter an https:// URL:</label>
+
+                    <input type="url" name="url" id="url"
+                            placeholder="https://example.com"
+                            pattern="https://.*" size="30"
+                            required>
+                </div>
+                <div>
+                    <label for="week">Choose a week in June or June:</label>
+
+                    <input type="week" name="week" id="camp-week"
+                            min="2019-W26" max="2018-W26" required>
+                </div>
+
+                <input type="reset" value="Reset">
                 <input type="image" id="image" alt="Send" src="#">
                 <input type="submit" value="Send email!"></p>
             </form>
         </div>
-            </section>
         </section>
+        
         
     </body>
 </html>
