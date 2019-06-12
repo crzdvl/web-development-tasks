@@ -147,6 +147,7 @@ button:hover {
     background-color: #16a085;
     text-align: center;
     padding-bottom: 50px;
+    color: #fff;
 }
 
 .contact h1 {
@@ -155,6 +156,7 @@ button:hover {
 .contact-form {
     display: flex;
     justify-content: center;
+    text-align: left;
 }
 
 form {
@@ -175,6 +177,15 @@ textarea {
     margin-left: 3px;
     font-size: 18px;
     font-family: 'Catamaran', sans-serif;
+}
+
+.questions {
+    margin: 15px 0;
+}
+
+.combo {
+    min-width: 50%;
+    max-width: 100%;
 }
 
 input[type=submit] {
