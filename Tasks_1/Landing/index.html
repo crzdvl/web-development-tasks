@@ -64,6 +64,44 @@
                 <input type="email" size="70" placeholder="Type here your email, please">
                 <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" size="70" placeholder="Type here your phone, please">                 
                 <textarea name="comment" cols="60" rows="3" placeholder="Ask your question"></textarea>
+                <div>
+                    <label for="amount">How many ....?</label>
+                    <input type="number" name="amount" id="amount">
+                </div>
+                <div>
+                    <label for="service">How do you like our service?</label>
+                    <br>
+                    <span>Bad</span>
+                    <input type="range" name="service" id="service" value="100" min="1" max="5">
+                    <span>Good</span>
+                </div>
+                <div>
+                    <span>How do you like our service?</span>
+                    <input type="checkbox" name="bad" id="bad" value="bad">
+                    <label for="bad">Bad</label>
+                    <input type="checkbox" name="so-so" id="so-so" value="so-so">
+                    <label for="so-so">So so</label>
+                    <input type="checkbox" name="good" id="good" value="good">
+                    <label for="good">Good</label>
+                </div>
+                <div>
+                    <span>How do you like our service?</span>
+                    <br>
+                    <input type="radio" name="good" id="good" value="good">
+                    <label for="good">Good</label>
+                    <input type="radio" name="bad" id="bad" value="bad">
+                    <label for="bad">Bad</label>
+                </div>
+                <div>
+                    <label for="country">Choose your country:</label>
+                    <input list="countries" id="country" name="country">
+                    <datalist id="countries">
+                      <option value="Ukraine"></option>
+                      <option value="Japan"></option>
+                      <option value="South Korea"></option>
+                    </datalist>
+                  </div>
+
                 <input type="submit" value="Send email!"></p>
             </form>
         </div>
