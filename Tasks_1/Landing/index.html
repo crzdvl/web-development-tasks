@@ -66,19 +66,24 @@
                 <textarea name="comment" cols="60" rows="3" placeholder="Ask your question"></textarea>
                 <input type="month" id="month" name="month" min="2019-06" value="2019-06">
                 <input type="password" id="pass" name="password" minlength="6" required placeholder="Password">
-                
                 <div>
-                    <label for="amount">How many ....?</label>
-                    <input type="number" name="amount" id="amount">
+                    <input list="countries" id="country" name="country" size="70" placeholder="Choose your country">
+                    <datalist id="countries">
+                      <option value="Ukraine"></option>
+                      <option value="Japan"></option>
+                      <option value="South Korea"></option>
+                    </datalist>
                 </div>
-                <div>
+                <input type="number" name="amount" id="amount" placeholder="Choose your number">
+
+                <div class="questions">
                     <label for="service">How do you like our service?</label>
                     <br>
                     <span>Bad</span>
-                    <input type="range" name="service" id="service" value="100" min="1" max="5">
+                    <input type="range" name="service" id="service" value="100" min="1" max="5" class="combo">
                     <span>Good</span>
                 </div>
-                <div>
+                <div class="questions">
                     <span>How do you like our service?</span>
                     <input type="checkbox" name="bad" id="bad" value="bad">
                     <label for="bad">Bad</label>
@@ -87,7 +92,7 @@
                     <input type="checkbox" name="good" id="good" value="good">
                     <label for="good">Good</label>
                 </div>
-                <div>
+                <div class="questions">
                     <span>How do you like our service?</span>
                     <br>
                     <input type="radio" name="good" id="good" value="good">
@@ -95,74 +100,66 @@
                     <input type="radio" name="bad" id="bad" value="bad">
                     <label for="bad">Bad</label>
                 </div>
-                <div>
-                    <label for="country">Choose your country:</label>
-                    <input list="countries" id="country" name="country">
-                    <datalist id="countries">
-                      <option value="Ukraine"></option>
-                      <option value="Japan"></option>
-                      <option value="South Korea"></option>
-                    </datalist>
-                </div>
-                <div>
+
+                <div class="questions">
                     <label for="color">Favorite color:</label>
                     <input type="color" id="color" name="color"
-                           value="#1abc9c">
+                           value="#1abc9c" class="combo">
                 </div>
-                <div>
+                <div class="questions">
                     <label for="date">Today's date:</label>
 
                     <input type="date" id="date" name="date"
                             value="2019-10-01"
-                            min="2019-10-01">
+                            min="2019-10-01" class="combo">
                 </div>
-                <div>
+                <div class="questions">
                     <label for="time">Choose a time:</label>
 
                     <input type="datetime-local" id="time"
                             name="time" value="2019-10-01T00:30"
-                            min="2019-10-01T00:00"> 
+                            min="2019-10-01T00:00" class="combo"> 
                 </div>
-                <div>
+                <div class="questions">
                     <label for="logo">Choose a logo:</label>
 
                     <input type="file"
                             id="logo" name="logo"
-                            accept="image/png, image/jpeg">
+                            accept="image/png, image/jpeg" class="combo">
                 </div>
                 <input id="prodId" name="prodId" type="hidden" value="xm234jq">
-                <div>
+                <div class="questions">
                     <label for="tentacles">Number of tentacles (100-900):</label>
 
                     <input type="number" id="tentacles" name="tentacles"
-                            min="100" max="900">
+                            min="100" max="900" class="combo">
                 </div> 
-                <div>
+                <div class="questions">
                     <label for="site-search">Search the site:</label>
                     <input type="search" id="site-search" name="q"
-                            aria-label="Search through site content">
+                            aria-label="Search through site content" class="combo">
                     <button>Search</button>
                 </div>
-                <div>
+                <div class="questions">
                     <label for="appt">Choose a time for your meeting:</label>
 
                     <input type="time" id="appt" name="appt"
-                            min="9:00" max="10:00" required>
+                            min="9:00" max="10:00" required class="combo">
                     <span class="note">Office hours are 9am to 10am</span>
                 </div>
-                <div>
+                <div class="questions">
                     <label for="url">Enter an https:// URL:</label>
 
                     <input type="url" name="url" id="url"
                             placeholder="https://example.com"
-                            pattern="https://.*" size="30"
+                            pattern="https://.*" size="30" class="combo"
                             required>
                 </div>
-                <div>
+                <div class="questions">
                     <label for="week">Choose a week in June or June:</label>
 
                     <input type="week" name="week" id="camp-week"
-                            min="2019-W26" max="2018-W26" required>
+                            min="2019-W26" max="2018-W26" class="combo" required>
                 </div>
 
                 <input type="reset" value="Reset">
@@ -171,7 +168,5 @@
             </form>
         </div>
         </section>
-        
-        
     </body>
 </html>
