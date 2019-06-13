@@ -188,6 +188,61 @@ textarea {
     max-width: 100%;
 }
 
+#month {
+    color: #808080;
+}
+
+.questions {
+    display: flex;
+}
+
+.questions span {
+    margin: 0 15px;
+}
+
+#bad , #so-so , #good {
+    margin: 0 5px 0 20px;
+}
+
+#color , #date , #time , #logo , #tentacles , #site-search , #url , #camp-week{
+    margin: 0 20px;
+}
+
+#reset {
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    width: 200px;
+    height: 50px;
+    border: 2px solid;
+    border-radius: 8px;
+    background-color: #ffffff00;
+    font-size: 20px;
+}
+
+#reset:hover {
+    color: #16a085;
+    text-decoration: none;
+    user-select: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#image {
+    width: 200px;
+    height: 50px;
+}
+
 input[type=submit] {
     color: #fff;
     text-decoration: none;

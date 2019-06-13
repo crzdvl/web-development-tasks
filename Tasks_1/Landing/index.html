@@ -23,7 +23,7 @@
 
         <section class="about-app">
             <div class="phone">
-                <img src="phone.png" alt="phone">
+                <img src="img/phone.png" alt="phone">
             </div>
             <div class="description">
                 <h1>Our awesome app is ready to use!</h1>
@@ -64,6 +64,8 @@
                 <input type="email" size="70" placeholder="Type here your email, please">
                 <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" size="70" placeholder="Type here your phone, please">                 
                 <textarea name="comment" cols="60" rows="3" placeholder="Ask your question"></textarea>
+                <input type="submit" value="Send email!"></p>
+
                 <input type="month" id="month" name="month" min="2019-06" value="2019-06">
                 <input type="password" id="pass" name="password" minlength="6" required placeholder="Password">
                 <div>
@@ -75,7 +77,6 @@
                     </datalist>
                 </div>
                 <input type="number" name="amount" id="amount" placeholder="Choose your number">
-
                 <div class="questions">
                     <label for="service">How do you like our service?</label>
                     <br>
@@ -84,7 +85,7 @@
                     <span>Good</span>
                 </div>
                 <div class="questions">
-                    <span>How do you like our service?</span>
+                    <label>How do you like our service?</label>
                     <input type="checkbox" name="bad" id="bad" value="bad">
                     <label for="bad">Bad</label>
                     <input type="checkbox" name="so-so" id="so-so" value="so-so">
@@ -93,7 +94,7 @@
                     <label for="good">Good</label>
                 </div>
                 <div class="questions">
-                    <span>How do you like our service?</span>
+                    <Label>How do you like our service?</label>
                     <br>
                     <input type="radio" name="good" id="good" value="good">
                     <label for="good">Good</label>
@@ -138,7 +139,6 @@
                     <label for="site-search">Search the site:</label>
                     <input type="search" id="site-search" name="q"
                             aria-label="Search through site content" class="combo">
-                    <button>Search</button>
                 </div>
                 <div class="questions">
                     <label for="appt">Choose a time for your meeting:</label>
@@ -161,10 +161,10 @@
                     <input type="week" name="week" id="camp-week"
                             min="2019-W26" max="2018-W26" class="combo" required>
                 </div>
-
-                <input type="reset" value="Reset">
-                <input type="image" id="image" alt="Send" src="#">
-                <input type="submit" value="Send email!"></p>
+                <div class="buttons">
+                    <input type="reset" value="Reset" id="reset" >
+                    <input type="image" id="image" alt="Send" src="img/Submit-Button-PNG-Clipart.png">
+                </div>
             </form>
         </div>
         </section>
