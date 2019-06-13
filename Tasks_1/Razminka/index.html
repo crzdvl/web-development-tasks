@@ -45,13 +45,12 @@
 
     /*Third part of "Разминка", used flex*/
     .flexbox {
+      display: flex;
       flex-direction: row;
-      justify-content: flex-start;
       /*Small guide: http://code.mu/css/flex-direction.html */
     }
 
     .flexbox .column {
-      display: inline-block;
       width: 33.33%;
     }
 
@@ -76,10 +75,10 @@
     --><div class="column" style="background-color: #d35400">2</div><!--
     --><div class="column" style="background-color: #c0392b">3</div>
     </section>
-    <section class="flexbox"><!--
-    --><div class="column" style="background-color: #16a085">1</div><!--
-    --><div class="column" style="background-color: #27ae60">2</div><!--
-    --><div class="column" style="background-color: #2980b9">3</div>
+    <section class="flexbox">
+      <div class="column" style="background-color: #16a085">1</div>
+      <div class="column" style="background-color: #27ae60">2</div>
+      <div class="column" style="background-color: #2980b9">3</div>
     </section>
     <section class="grid">
       <div class="column" style="background-color: #f1c40f">1</div>
