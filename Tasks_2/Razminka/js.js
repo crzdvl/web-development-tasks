@@ -47,28 +47,7 @@ button_4.onclick = function() {
 	let a = document.getElementById("datetime-local-1").value;
 	let b = document.getElementById("datetime-local-2").value;
 
-	if(a < b){
-		max = b;
-		min = a;
-	} else { 
-		max = a;
-		min = b;
-	}
 
-	let c = max.split(":");
-	let max = (+b[0]) * 3600 + (+b[1]) * 60 + (+b[2]);
-	alert(max);
 
-	let c = min.split(":");
-	let min = (+b[0]) * 3600 + (+b[1]) * 60 + (+b[2]);
-	alert(min);
-
-	let difference = max - min;
-	alert(difference);
-
-	let date = new Date(null);
-	date.setSeconds(difference);
-	let difference = date.toISOString();
-
-	alert(difference);
+	
 };
