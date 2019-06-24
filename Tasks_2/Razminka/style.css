@@ -1,4 +1,4 @@
-bbody {
+body {
     background: linear-gradient(90deg, #FFC3F0, #FDF784);/*угол / сторона или угол наклона с помощью ключевого слова (пары ключевых слов), первый цвет, второй цвет и т.д.*/
     font-family: 'Raleway', sans-serif;
     margin: 0;
