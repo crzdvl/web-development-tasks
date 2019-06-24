@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Razminka</title>
+        <title>Warm Up</title>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
@@ -9,21 +9,53 @@
     <body>
 
         <div id="headline">
-            <h1>Razminka</h1>
+            <h1>Warm Up</h1>
         </div>
 
-        <section class="task_1">
+        <section class="task">
             <p>Дана форма с двумя числовыми инпутами. Посчитать сумму чисел в промежутке между введеными пользователем (например от -100 до 100), суммируя только числа которые заканчиваются на 2,3, и 7</p>
-            <form id="objective_1" action="">
+            <form action="">
                 <input id="value1" type="number">
-                <input id="value2"type="number">
+                <input id="value2" type="number">
+                <input type="button" class="button" id="button" value="Кнопка"/>
             </form>
-            <input type="button" id="button" value="Кнопка" />
-
-            <p id="numberRezult"></p>
+            
+            <div class="container">
+                <p>Sum = </p><p id="suma"></p>
+            </div>
         </section>
-		
-		<script src="js.js"></script>
-		
+        <section class="task">
+            <p>gskffkbngkfnbgbfbnglb;ng</p>
+            <form>
+                <input id="seconds" type="number">
+                <input type="button" class="button" id="button_2" value="Кнопка"/>
+            </form>
+            <div class="container">
+                <p>Time = </p><p id="timeString"></p>
+            </div>
+        </section>
+        <section class="task">
+            <p>gskffkbngkfnbgbfbnglb;ng</p>
+            <form>
+                <input id="appt-time" type="time" name="appt-time" step="2">
+                <input type="button" class="button" id="button_3" value="Кнопка"/>
+            </form>
+            <div class="container">
+                <p>Seconds = </p><p id="seconds"></p>
+            </div>
+        </section>
+        <section class="task">
+            <p>gskffkbngkfnbgbfbnglb;ng</p>
+            <form>
+                <input id="datetime-local-1" type="datetime-local" min="1900-01-01T08:30" max="3000-01-01T08:30">
+                <input id="datetime-local-2" type="datetime-local" min="1900-01-01T08:30" max="3000-01-01T08:30">
+                <input type="button" class="button" id="button_4" value="Кнопка"/>
+            </form>
+            <div class="container">
+                <p>Time = </p><p id="seconds"></p>
+            </div>
+        </section>
+        
+        <script src="js.js"></script>
     </body>
 </html>
