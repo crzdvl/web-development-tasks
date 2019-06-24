@@ -1,4 +1,4 @@
-body {
+bbody {
     background: linear-gradient(90deg, #FFC3F0, #FDF784);/*угол / сторона или угол наклона с помощью ключевого слова (пары ключевых слов), первый цвет, второй цвет и т.д.*/
     font-family: 'Raleway', sans-serif;
     margin: 0;
@@ -20,7 +20,6 @@ h1 {
 }
 
 p {
-    width: 600px;
     text-align: center;
     font-size: 16px;
     padding: 20px;
@@ -28,9 +27,13 @@ p {
     font-family: 'Raleway', sans-serif;
 }
 
-/*TASK_1*/
+.container {
+    display: flex;
+    flex-direction: row;
+}
 
-.task_1 {
+/*TASK_1*/
+.task{
     background-color: #fff;
     margin: 35px 150px;
     display: flex;
@@ -39,11 +42,11 @@ p {
     align-items: center;
 }
 
-#objective_1 {
+form {
     padding: 10px;
 }
 
-button {
+.button {
     padding: 10px 20px;
     text-decoration: none;
     user-select: none;
@@ -54,7 +57,7 @@ button {
     font-family: 'Raleway', sans-serif;
 }
 
-button:hover {
+#button:hover {
     padding: 10px 20px;
     text-decoration: none;
     user-select: none;
