@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Warm Up</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div id="headline">
+            <h1>Warm Up</h1>
+        </div>
+
+        <section class="task">
+            <p>Дана форма с двумя числовыми инпутами. Посчитать сумму чисел в промежутке между введеными пользователем (например от -100 до 100), суммируя только числа которые заканчиваются на 2,3, и 7</p>
+            <form action="">
+                <input id="value1" type="number">
+                <input id="value2" type="number">
+                <input type="button" class="button" id="button" value="Кнопка"/>
+            </form>
+            
+            <div class="container">
+                <p>Sum = </p><p id="suma"></p>
+            </div>
+        </section>
+        <section class="task">
+            <p>Пользователь вводит время в секундах. Вывести в формате: hh:mm:ss (01:05:20)</p>
+            <form>
+                <input id="seconds" type="number">
+                <input type="button" class="button" id="button_2" value="Кнопка"/>
+            </form>
+            <div class="container">
+                <p>Time = </p><p id="timeString"></p>
+            </div>
+        </section>
+        <section class="task">
+            <p>Пользователь вводит время в формате hh:mm:ss, вывести количество секунд.</p>
+            <form>
+                <input id="appt-time" type="time" name="appt-time" step="2">
+                <input type="button" class="button" id="button_3" value="Кнопка"/>
+            </form>
+            <div class="container">
+                <p>Seconds = </p><p id="secondss"></p>
+            </div>
+        </section>
+        <section class="task">
+            <p>Вычислить промежуток времени прошедший между датами</p>
+            <form name="dateForm"onsubmit="handler()"method="POST"> 
+                <input type='datetime-local' name='date1'>
+                <input type='datetime-local' name='date2'>
+                <input type='button' class="button" name='submitted' value="Кнопка"/>
+            </form>
+            <div class="container">
+                <p>Time = </p><p id="рseconds"></p>
+            </div>
+        </section>
+        <section class="task">
+                <p>Введите габариты шахматнной доски</p>
+                <form>
+                    <input type="number" id="num" size="3" name="num" min="2"  value="2">
+                    <input type="button" class="button" id="button_5" value="Кнопка"/>
+                </form>
+            </section>
+        <section class="task">
+            <p>Дан некий textarea, в который пользователь вводит ссылки или ip через запятую. Когда textarea станет неактивным - проверить введены ли ссылки/ip, удалить дичь (то что не ссылки и не ip), и вывести их отсортированным по алфавиту списком ссылок (Пользователю http:// и https:// не показывать, при клике на ссылку открывается новое окно).</p>
+            <form>
+                    <textarea id="area" rows="5"></textarea>
+                    <input type="button" class="button" id="button_6" value="Кнопка"/>  
+            </form> 
+            <p>List:</p><a id = "information" href=""></a>
+        </section>
+        
+        <script src="js.js"></script>
+    </body>
+</html>
