@@ -53,30 +53,32 @@ button_4.onclick = function() {
 	var date1 = new Date(date1.value);
 	var date2 = new Date(date2.value);
 	
-	if (date1.getFullYear() >= date2.getFullYear() && date1.getMonth() > date2.getMonth())
-	{
-		if (date1.getDate() < date2.getDate())
-		{
+		if (date1.getDate() < date2.getDate()){
 			currentDate['day'] = date2.getDate() - date1.getDate();
-		}
-		else 
-		{
+		} else {
 			currentDate['day'] = date1.getDate() - date2.getDate();
 		}
-		// Как и раньше было
-		currentDate['month'] = date1.getMonth() - date2.getMonth();
-		currentDate['year'] = date1.getFullYear() - date2.getFullYear();
-		currentDate['hour'] = date1.getHours()  - date2.getHours();
-		currentDate['minute'] = date1.getMinutes() - date2.getMinutes(); 
-	}
-	else 
-	{
-		currentDate['day'] = date2.getDate() - date1.getDate();
-		currentDate['month'] = date2.getMonth() - date1.getMonth();
-		currentDate['year'] = date2.getFullYear() - date1.getFullYear();
-		currentDate['hour'] = date2.getHours()  - date1.getHours();
-		currentDate['minute'] = date2.getMinutes() - date1.getMinutes(); 
-	}
+		if (date1.getMonth() < date2.getMonth()){
+			currentDate['month'] = date2.getMonth() - date1.getMonth();
+		} else {
+			currentDate['month'] = date1.getMonth() - date2.getMonth();
+		}
+		if (date1.getFullYear() < date2.getFullYear()){
+			currentDate['year'] = date2.getFullYear() - date1.getFullYear();
+		} else {
+			currentDate['year'] = date1.getFullYear() - date2.getFullYear();
+		}
+		if (date1.getHours() < date2.getHours()){
+			currentDate['hour'] = date2.getHours() - date1.getHours();
+		} else {
+			currentDate['hour'] = date1.getHours() - date2.getHours();
+		}
+		if (date1.getMinutes() < date2.getMinutes()){
+			currentDate['minute'] = date2.getMinutes() - date1.getMinutes();
+		} else {
+			currentDate['minute'] = date1.getMinutes() - date2.getMinutes();
+		}
+
 	alert(' Прошло дней ' + currentDate['day'] + ' Прошло месяцев: ' + currentDate['month'] +
 			' Прошло лет: ' + currentDate['year'] + ' Прошло часов: ' + currentDate['hour'] +
 			' Прошло минут: ' + currentDate['minute']);
