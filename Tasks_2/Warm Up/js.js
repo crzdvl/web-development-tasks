@@ -45,46 +45,42 @@ button_3.onclick = function() {
 }
 
 
-		// getDate - get our  the month
-		// getFullYear - get our  the fullYear
-		// getHours - get our current the Hour
-		// getMinutes - get our current the minute
-		function handler() 
+
+button_4.onclick = function() {
+	var date1 = document.dateForm.date1;
+	var date2 = document.dateForm.date2;
+	var currentDate = [];
+	var date1 = new Date(date1.value);
+	var date2 = new Date(date2.value);
+	
+	if (date1.getFullYear() >= date2.getFullYear() && date1.getMonth() > date2.getMonth())
+	{
+		if (date1.getDate() < date2.getDate())
 		{
-			var date1 = document.dateForm.date1;
-			var date2 = document.dateForm.date2;
-			var currentDate = [];
-			var date1 = new Date(date1.value);
-			var date2 = new Date(date2.value);
-			
-			if (date1.getFullYear() >= date2.getFullYear() && date1.getMonth() > date2.getMonth())
-			{
-				if (date1.getDate() < date2.getDate())
-				{
-					currentDate['day'] = date2.getDate() - date1.getDate();
-				}
-				else 
-				{
-					currentDate['day'] = date1.getDate() - date2.getDate();
-				}
-				// Как и раньше было
-				currentDate['month'] = date1.getMonth() - date2.getMonth();
-				currentDate['year'] = date1.getFullYear() - date2.getFullYear();
-				currentDate['hour'] = date1.getHours()  - date2.getHours();
-				currentDate['minute'] = date1.getMinutes() - date2.getMinutes(); 
-			}
-			else 
-			{
-				currentDate['day'] = date2.getDate() - date1.getDate();
-				currentDate['month'] = date2.getMonth() - date1.getMonth();
-				currentDate['year'] = date2.getFullYear() - date1.getFullYear();
-				currentDate['hour'] = date2.getHours()  - date1.getHours();
-				currentDate['minute'] = date2.getMinutes() - date1.getMinutes(); 
-			}
-			alert(' Прошло дней ' + currentDate['day'] + ' Прошло месяцев: ' + currentDate['month'] +
-				  ' Прошло лет: ' + currentDate['year'] + ' Прошло часов: ' + currentDate['hour'] +
-				  ' Прошло минут: ' + currentDate['minute']);
+			currentDate['day'] = date2.getDate() - date1.getDate();
 		}
+		else 
+		{
+			currentDate['day'] = date1.getDate() - date2.getDate();
+		}
+		// Как и раньше было
+		currentDate['month'] = date1.getMonth() - date2.getMonth();
+		currentDate['year'] = date1.getFullYear() - date2.getFullYear();
+		currentDate['hour'] = date1.getHours()  - date2.getHours();
+		currentDate['minute'] = date1.getMinutes() - date2.getMinutes(); 
+	}
+	else 
+	{
+		currentDate['day'] = date2.getDate() - date1.getDate();
+		currentDate['month'] = date2.getMonth() - date1.getMonth();
+		currentDate['year'] = date2.getFullYear() - date1.getFullYear();
+		currentDate['hour'] = date2.getHours()  - date1.getHours();
+		currentDate['minute'] = date2.getMinutes() - date1.getMinutes(); 
+	}
+	alert(' Прошло дней ' + currentDate['day'] + ' Прошло месяцев: ' + currentDate['month'] +
+			' Прошло лет: ' + currentDate['year'] + ' Прошло часов: ' + currentDate['hour'] +
+			' Прошло минут: ' + currentDate['minute']);
+}
 
 
 
@@ -107,13 +103,12 @@ button_5.onclick = function() {
 }
 
 
-
-
 button_6.onclick = function() {
 	let informationn = document.getElementById("area").value;
 
-
 	let information = informationn.split(',');
+
+	information = information.replace(/(^\w+:|^)\/\//, '', '<a href="$&">$&</a>');
 
 	let expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
 	let urlRegexpFirst = new RegExp(expression);
@@ -134,8 +129,8 @@ button_6.onclick = function() {
 
 	}
 
-	information.sort();
-	information.reverse();
+	/*information.sort();
+	information.reverse();*/
 
 	(function() {
 		elem = document.getElementById( 'information' ), i = -1;
@@ -147,3 +142,13 @@ button_6.onclick = function() {
 		}();
 	})();
 }
+
+button_7.onclick = function() {
+	let text = document.getElementById('text').value,
+		regexp = new RegExp(document.getElementById('regexp').value);
+
+	text = text.replace(regexp, '<mark>$&</mark>');
+
+	document.getElementById("newText").innerHTML = text;
+}
+
