@@ -110,8 +110,6 @@ button_6.onclick = function() {
 
 	let information = informationn.split(',');
 
-	information = information.replace(/(^\w+:|^)\/\//, '', '<a href="$&">$&</a>');
-
 	let expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
 	let urlRegexpFirst = new RegExp(expression);
 
@@ -122,14 +120,17 @@ button_6.onclick = function() {
 	let ipRegexp = new RegExp(a);
 
 	for(let i = 0; i < information.length; i++){
-
 		if(information[i].match(urlRegexpFirst) || information[i].match(urlRegexpSecond) || information[i].match(ipRegexp) ) {
-			console.log(i, "first while", information[i]);
 		} else {
 			delete information[i]; //.splice(i, i); //начиная с позиции 1, удалить 1 элемент
 		}
-
 	}
+
+	const elements = information.value;
+    const regexp_url = new RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
+    for (let i = 0; i < information.length; i++) {
+        information[i] = information[i].replace(/^https?:\/\//, '');
+    }
 
 	/*information.sort();
 	information.reverse();*/
