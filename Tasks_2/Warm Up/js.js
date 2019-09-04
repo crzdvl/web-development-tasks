@@ -133,7 +133,7 @@ button_6.onclick = function() {
     }
 
 	/*information.sort();
-	information.reverse();*/
+	information.reverse();
 
 	(function() {
 		elem = document.getElementById( 'information' ), i = -1;
@@ -143,7 +143,15 @@ button_6.onclick = function() {
 			setTimeout( arguments.callee, 2000 );
 		}
 		}();
-	})();
+	})();*/
+	
+	let a = document.createElement('a');
+	for (let i = 0; i < information.length; i++) {
+	  link = a.cloneNode();
+	  link.href = information[i];
+	  link.innerHTML = information[i];
+	  document.getElementById('information').appendChild(link);
+	}
 }
 
 button_7.onclick = function() {
