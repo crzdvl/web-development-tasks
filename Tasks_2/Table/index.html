@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Table task</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+</head>
+<body>
+  <section class="container" style="margin-top: 2rem">
+    <h2 class="title is-2">PS2 JS+RegExp</h2>
+    <h4 class="subtitle is-4">Table task</h4>
+    <nav class="panel" style="width: 600px;">
+      <p class="panel-heading">
+        Customer's Bill
+      </p>
+      <div class="panel-block">
+        <div class="field is-horizontal" style="width: 100%">
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input class="input" id="search" type="text" placeholder="Search by name">
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <div class="select" style="width: 100%">
+                  <select placeholder="Filter by category" style="width: 100%">
+                    <option value="" selected>Filter by category</option>
+                    <option value="supplies">Office supplies</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-block">
+        <table id="container" class="table is-striped is-fullwidth" id="table">
+          <thead>
+            <tr>
+              <th id="category" style="cursor: pointer;">Category<span  id="category_span">▼</span></th>
+              <th id="name" style="cursor: pointer;">Name<span id="name_span">▼</span></th>
+              <th>Amount</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="table-information">
+            <!--<tr>
+              <td>Office supplies</td>
+              <td>Pen</td>
+              <td>10</td>
+              <td>2$</td>
+            </tr>
+            <tr>
+              <td>Furniture</td>
+              <td>Chair</td>
+              <td>1</td>
+              <td>20$</td>
+            </tr>
+            <tr>
+              <td>Other</td>
+              <td>Trash bin</td>
+              <td>1</td>
+              <td>5$</td>
+            </tr>-->
+          </tbody>
+          <tfoot id="parent">
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Total:</th>
+              <th id="total">54</th> 
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </nav>
+  </section>
+  <script src="js.js"></script>
+</body>
+</html>
