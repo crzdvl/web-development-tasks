@@ -60,7 +60,7 @@ function removeElements() {
     table_container.removeChild(table_container.childNodes.firstChild);
     console.log('f');
   };*/
-  let a = document.getElementsByTagName('tr');
+  const a = document.getElementsByTagName('tr');
   for(let i = 1; i < 7;i++){
     //a[i].remove();
     a[i] = "";
@@ -130,8 +130,46 @@ function validateName() {
 */
 
 
+filter.onclick = function() {
 
+  let filterCategory = document.getElementById('filter').value;
+  console.log(filterCategory);
+  for (let i = 1; i < GOODS.length; i++) {
+    if (filterCategory === "furniture") {
+      console.log("filterCategory = 'Other'");
+      if(GOODS[i].category === "furniture"){
+        console.log("GOODS[i].category === filterCategory");
+        document.getElementsByTagName('tr')[i].style.display = 'table-row';
+      } else {
+        document.getElementsByTagName('tr')[i].style.display = 'none';
+      }
 
+   /* } else if (GOODS[i].category === filterCategory) {
+      document.getElementsByTagName('tr')[i].style.display = 'table-row';
+      
+    } else {
+      document.getElementsByTagName('tr')[i].style.display = 'none';
+    }}*/
+  }}}
 
+ /* switch(GOODS[i].category.value){
+    case "Other":
+      console.log('other');
+      break;
+    case "Office supplies":
+      console.log('offide supplies');
+      break;
+    case "Furniture":
+      console.log('furniture');
+      break;
+  }
+}*/
 
-
+ /* for (let i=0; i < GOODS.length; i++) {
+  	if (GOODS[i].category = filter) {
+    	document.getElementsByTagName('tr')[i].style.display = 'block';
+    } else {
+    	document.getElementsByTagName('tr')[i].style.display = 'none';
+    }
+  }
+};*/
