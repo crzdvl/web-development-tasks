@@ -104,53 +104,32 @@ function uploadingElements(elements)
   total.innerHTML = total_price + '¥';
 };
 
-/*
-
-document.getElementById("search").addEventListener("keydown", validateName);
-
-function validateName() {
-  /*
-    if(document.getElementById("search").value === GOODS[1].name){
-      console.log('sbgsnbg');
-
-    } else {
-
-    }
-  }
-  for(i = 0;i < 6;i++){
-    if (document.getElementById("search").value = GOODS[i].name){
-      /*document.getElementById("search").style.cssText=`    
-        color: green;
-    `;
-    }
-    console.log(i);
-    }
-  }
-}
-*/
-
 
 filter.onclick = function() {
-
   let filterCategory = document.getElementById('filter').value;
   console.log(filterCategory);
   for (let i = 1; i < GOODS.length; i++) {
     if (filterCategory === "furniture") {
-      console.log("filterCategory = 'Other'");
+      console.log(filterCategory);
       if(GOODS[i].category === "furniture"){
-        console.log("GOODS[i].category === filterCategory");
+        //console.log(GOODS[i].category);
+        //document.getElementsByTagName('tr')[i].style.display = 'none';
         document.getElementsByTagName('tr')[i].style.display = 'table-row';
       } else {
+        console.log(GOODS[i].category);
+        //document.getElementsByTagName('tr')[i].style.display = 'table-row';
         document.getElementsByTagName('tr')[i].style.display = 'none';
       }
+    }
+  }
+}
 
-   /* } else if (GOODS[i].category === filterCategory) {
+     /* } else if (GOODS[i].category === filterCategory) {
       document.getElementsByTagName('tr')[i].style.display = 'table-row';
       
     } else {
       document.getElementsByTagName('tr')[i].style.display = 'none';
     }}*/
-  }}}
 
  /* switch(GOODS[i].category.value){
     case "Other":
