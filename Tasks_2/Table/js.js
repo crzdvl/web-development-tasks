@@ -37,16 +37,54 @@ const GOODS = [
     }
   ];
 
+window.onload = function () {
+  clickListener();
+}
+
+
+function clickListener() {
+  const element = document.getElementById('category');
+  element.addEventListener('click', function(event) {
+    removeElements();
+    sortByCategory();
+    console.log(GOODS);
+    uploadingElements(GOODS);
+  });
+}
+
+function removeElements() {
+  table_container.childNodes.firstChild;
+  console.log(table_container.childNodes);
+  while(table_container.childNodes.firstChild) {
+    table_container.removeChild(table_container.childNodes.firstChild);
+  };
+}
+
+function sortByCategory() {
+  GOODS.sort(function(a, b){
+    if ( a.category < b.category ){
+      return -1;
+    }
+    if ( a.category > b.category ){
+      return 1;
+    }
+    return 0;
+  });
+}
+
+
+
 let total = document.getElementById('total');
 let total_price = 0;
 let table_container = document.getElementById('table-information');
 let container = '<tbody>';
+
 uploadingElements(GOODS);
 
 function uploadingElements(elements)
 {  
+
   elements.forEach(function (elem) {
-    
     container += '<tr>';
     container += '<td>' + elem.category + '</td>';
     container += '<td>' + elem.name     + '</td>';
@@ -58,21 +96,8 @@ function uploadingElements(elements)
   table_container.innerHTML = container;
   total.innerHTML = total_price + '¥';
 };
-/*
-let i = 0;
-let filtered_data    = [];
-document.getElementById('category').onclick = function(){
-  if (i === 0){
-    GOODS.sort(function(a,b){
-      return arraySort(a.name,b.name);
-  });
-  i++;
-  } else {
 
-    i--;
-  }
-}
-*/
+/*
 
 document.getElementById("search").addEventListener("keydown", validateName);
 
@@ -84,18 +109,18 @@ function validateName() {
     } else {
 
     }
-  }*/
+  }
   for(i = 0;i < 6;i++){
     if (document.getElementById("search").value = GOODS[i].name){
       /*document.getElementById("search").style.cssText=`    
         color: green;
     `;
-    }*/
+    }
     console.log(i);
     }
   }
 }
-
+*/
 
 
 
