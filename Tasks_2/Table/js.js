@@ -54,16 +54,8 @@ function clickListener() {
 
 function removeElements() {
   console.log('fdf');
-  /*table_container.childNodes.firstChild;
-  console.log(table_container.childNodes);
-  while(table_container.childNodes.firstChild) {
-    table_container.removeChild(table_container.childNodes.firstChild);
-    console.log('f');
-  };*/
-  const a = document.getElementsByTagName('tr');
-  for(let i = 1; i < 7;i++){
-    //a[i].remove();
-    a[i] = "";
+  for(let i = 1; i < GOODS.length ;i++){
+    document.getElementsByTagName('tr')[i].style.display = 'none';
   }
 }
 
@@ -104,7 +96,37 @@ function uploadingElements(elements)
   total.innerHTML = total_price + '¥';
 };
 
+filter.onclick = function() {
+  let filterCategory = document.getElementById('filter').value;
+ 
+  if (filterCategory != '') {
+    for (let i = 0; i < GOODS.length; i++) {
+ 
+        if(GOODS[i].category == filterCategory){
+          document.getElementsByTagName('tr')[i].style.display = 'table-row';
+        } else {
+          document.getElementsByTagName('tr')[i].style.display = 'none';
+        }
+    }
+  } else {
+      // it's working
+      const TR_ELEMENTS_QUANTITY = document.querySelectorAll('tbody tr');
+ 
+      for (let b = 0; b < TR_ELEMENTS_QUANTITY.length; b++) {
+        document.getElementsByTagName('tr')[b].style.display = 'table-row';
+      }
+  }
+}
 
+  /*table_container.childNodes.firstChild;
+  console.log(table_container.childNodes);
+  while(table_container.childNodes.firstChild) {
+    table_container.removeChild(table_container.childNodes.firstChild);
+    console.log('f');
+  };*/
+
+
+/*
 filter.onclick = function() {
   let filterCategory = document.getElementById('filter').value;
   console.log(filterCategory);
@@ -122,7 +144,7 @@ filter.onclick = function() {
       }
     }
   }
-}
+}*/
 
      /* } else if (GOODS[i].category === filterCategory) {
       document.getElementsByTagName('tr')[i].style.display = 'table-row';
