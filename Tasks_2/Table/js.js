@@ -53,11 +53,18 @@ function clickListener() {
 }
 
 function removeElements() {
-  table_container.childNodes.firstChild;
+  console.log('fdf');
+  /*table_container.childNodes.firstChild;
   console.log(table_container.childNodes);
   while(table_container.childNodes.firstChild) {
     table_container.removeChild(table_container.childNodes.firstChild);
-  };
+    console.log('f');
+  };*/
+  let a = document.getElementsByTagName('tr');
+  for(let i = 1; i < 7;i++){
+    //a[i].remove();
+    a[i] = "";
+  }
 }
 
 function sortByCategory() {
