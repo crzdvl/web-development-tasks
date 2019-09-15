@@ -53,9 +53,8 @@ function clickListener() {
 }
 
 function removeElements() {
-  console.log('fdf');
   for(let i = 1; i < GOODS.length ;i++){
-    document.getElementsByTagName('tr')[i].style.display = 'none';
+    document.querySelectorAll('tbody tr')[i].style.display = 'none';
   }
 }
 
@@ -101,18 +100,14 @@ filter.onclick = function() {
  
   if (filterCategory != '') {
     for (let i = 0; i < GOODS.length; i++) {
- 
-        if(GOODS[i].category == filterCategory){
-          document.getElementsByTagName('tr')[i].style.display = 'table-row';
+        if(GOODS[i].category.trim() === filterCategory.trim()){
+          document.querySelectorAll('tbody tr')[i].style.display = 'table-row';
         } else {
-          document.getElementsByTagName('tr')[i].style.display = 'none';
+          document.querySelectorAll('tbody tr')[i].style.display = 'none';
         }
     }
   } else {
-      // it's working
-      const TR_ELEMENTS_QUANTITY = document.querySelectorAll('tbody tr');
- 
-      for (let b = 0; b < TR_ELEMENTS_QUANTITY.length; b++) {
+      for (let b = 0; b <= GOODS.length; b++) {
         document.getElementsByTagName('tr')[b].style.display = 'table-row';
       }
   }
