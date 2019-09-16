@@ -37,6 +37,14 @@ const GOODS = [
     }
   ];
 
+let total = document.getElementById('total');
+let totalPrice = 0;
+let tableContainer = document.getElementById('table-information');
+let container = '<tbody>';
+
+uploadElements(GOODS);
+
+
 window.onload = function () {
   clickListener();
 }
@@ -47,13 +55,14 @@ function clickListener() {
   element.addEventListener('click', function(event) {
     removeElements();
     sortByCategory();
-    console.log(GOODS);
-    uploadingElements(GOODS);
+    uploadElements(GOODS);
   });
 }
 
 function removeElements() {
+  console.log(GOODS);
   for(let i = 1; i < GOODS.length ;i++){
+    console.log(i);
     document.querySelectorAll('tbody tr')[i].style.display = 'none';
   }
 }
@@ -70,18 +79,8 @@ function sortByCategory() {
   });
 }
 
-
-
-let total = document.getElementById('total');
-let total_price = 0;
-let table_container = document.getElementById('table-information');
-let container = '<tbody>';
-
-uploadingElements(GOODS);
-
-function uploadingElements(elements)
+function uploadElements(elements)
 {  
-
   elements.forEach(function (elem) {
     container += '<tr>';
     container += '<td>' + elem.category + '</td>';
@@ -89,15 +88,15 @@ function uploadingElements(elements)
     container += '<td>' + elem.amount   + '</td>';
     container += '<td>' + elem.price    + '</td>';
     container += '</tr>';
-    total_price += elem.price * elem.amount;
+    totalPrice += elem.price * elem.amount;
 });
-  table_container.innerHTML = container;
-  total.innerHTML = total_price + '¥';
+  tableContainer.innerHTML = container;
+  total.innerHTML = totalPrice + '¥';
 };
+
 
 filter.onclick = function() {
   let filterCategory = document.getElementById('filter').value;
- 
   if (filterCategory != '') {
     for (let i = 0; i < GOODS.length; i++) {
         if(GOODS[i].category.trim() === filterCategory.trim()){
@@ -107,10 +106,28 @@ filter.onclick = function() {
         }
     }
   } else {
-      for (let b = 0; b <= GOODS.length; b++) {
-        document.getElementsByTagName('tr')[b].style.display = 'table-row';
+      for (let j = 0; j <= GOODS.length; j++) {
+        document.querySelectorAll('tbody tr')[j].style.display = 'table-row';
       }
   }
 }
 
- 
+
+document.getElementById('search').oninput = function () {
+  let val = this.value.trim();
+
+  if (val != '') {  
+    for (let i = 0; i < GOODS.length; i++) {
+      if (GOODS[i].category.search(val) == -1) {
+        document.querySelectorAll('tbody tr')[i].style.display = 'none';
+      } else {
+        document.querySelectorAll('tbody tr')[i].style.display = 'table-row';
+      }
+    };
+  }
+  else {
+    for (let j = 0; j <= GOODS.length; j++) {
+      document.querySelectorAll('tbody tr')[j].style.display = 'table-row';
+    }
+  }
+}
