@@ -38,7 +38,6 @@ const GOODS = [
 ];
 
 let total = document.getElementById('total');
-let totalPrice = 0;
 let tableContainer = document.getElementById('table-information');
 let i = 0;
 uploadElements(GOODS);
@@ -107,6 +106,7 @@ function sortByCategory() {
 
 function uploadElements(elements){  
   let container = '<tbody>';
+  let totalPrice = 0;
   elements.forEach(function (elem) {
     container += '<tr>';
     container += '<td>' + elem.category + '</td>';
