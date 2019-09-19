@@ -52,41 +52,41 @@ function sortName() {
   const element = document.getElementById('name');
   element.addEventListener('click', function(event) {
       sortByName();
-      GOODSreverse();
+      nameReverse();
       uploadElements(GOODS); 
   });
 }
 
 function sortCategory() {
   const element = document.getElementById('category');
+  let span = document.getElementById('name_span');
   element.addEventListener('click', function(event) {
       sortByCategory();
-      GOODSreverse();
+      categoryReverse();
       uploadElements(GOODS); 
   });
 }
 
-function sortByName() {
-  GOODS.sort(function(a, b){
-    if ( a.name < b.name ){
-      return -1;
-    }
-    if ( a.name > b.name ){
-      return 1;
-    }
-    return 0;
-  });
-}
-
-
-
-
-function GOODSreverse() {
+function categoryReverse() {
   if(i === 0){
     GOODS.reverse();
     i = 1;
+    document.getElementById('category_span').innerHTML = "▲";
   } else {
     i = 0;
+    document.getElementById('category_span').innerHTML = "▼";
+  }
+  return i;
+}
+  
+function nameReverse() {
+  if(i === 0){
+    GOODS.reverse();
+    i = 1;
+    document.getElementById('name_span').innerHTML = "▲";
+  } else {
+    i = 0;
+    document.getElementById('name_span').innerHTML = "▼";
   }
   return i;
 }
@@ -98,6 +98,18 @@ function sortByCategory() {
       return -1;
     }
     if ( a.category > b.category ){
+      return 1;
+    }
+    return 0;
+  });
+}
+
+function sortByName() {
+  GOODS.sort(function(a, b){
+    if ( a.name < b.name ){
+      return -1;
+    }
+    if ( a.name > b.name ){
       return 1;
     }
     return 0;
@@ -138,20 +150,19 @@ if (filterCategory != '') {
 }
 
 document.getElementById('search').oninput = function () {
-let val = this.value.trim();
-
-if (val != '') {  
-  for (let i = 0; i < GOODS.length; i++) {
-    if (GOODS[i].category.search(val) == -1) {
-      document.querySelectorAll('tbody tr')[i].style.display = 'none';
-    } else {
-      document.querySelectorAll('tbody tr')[i].style.display = 'table-row';
-    }
-  };
-}
-else {
-  for (let j = 0; j <= GOODS.length; j++) {
-    document.querySelectorAll('tbody tr')[j].style.display = 'table-row';
+  let val = this.value.trim();
+  if (val != '') {  
+    for (let i = 0; i < GOODS.length; i++) {
+      if (GOODS[i].name.search(val) == -1) {
+        document.querySelectorAll('tbody tr')[i].style.display = 'none';
+      } else {
+        document.querySelectorAll('tbody tr')[i].style.display = 'table-row';
+      }
+    };
   }
-}
+  else {
+    for (let j = 0; j <= GOODS.length; j++) {
+      document.querySelectorAll('tbody tr')[j].style.display = 'table-row';
+    }
+  }
 }
