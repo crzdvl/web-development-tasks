@@ -134,7 +134,6 @@ button_6.onclick = function() {
 
 	/*information.sort();
 	information.reverse();
-
 	(function() {
 		elem = document.getElementById( 'information' ), i = -1;
 	return function() {
@@ -150,8 +149,38 @@ button_6.onclick = function() {
 	  link = a.cloneNode();
 	  link.href = information[i];
 	  link.innerHTML = information[i];
-	  document.getElementById('information').appendChild(link);
+	  document.getElementById('list').appendChild(link);
 	}
+	/*let informationData = document.getElementById("area").value;
+
+	let information = informationData.split(',');
+
+	let urlRegexpFirst = new RegExp('/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi');
+
+	let urlRegexpSecond = new RegExp('/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi');
+
+	let ipRegexp = new RegExp('/(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}/g');
+
+	for(let i = 0; i < information.length; i++){
+		if(information[i].match(urlRegexpFirst) || information[i].match(urlRegexpSecond) || information[i].match(ipRegexp) ) {
+		} else {
+			delete information[i]; //.splice(i, i); //начиная с позиции 1, удалить 1 элемент
+		}
+	}
+
+	information.sort().reverse();
+
+	console.log(information);
+	document.getElementById("list").innerHTML = information;    
+		
+	/*let a = document.createElement('a');
+	for (let i = 0; i < information.length; i++) {
+	  link = a.cloneNode();
+	  link.href = information[i];
+	  link.innerHTML = information[i] + '</br>';
+	  document.getElementById('list').appendChild(link);
+	  console.log(information[i]);
+	}*/
 }
 
 button_7.onclick = function() {
