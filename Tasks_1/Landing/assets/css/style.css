@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    font-family: 'Catamaran', sans-serif;
+    color: #000;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 100px;
+
+}
+
+#main-logo a {
+    text-decoration: none;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+#main-logo #N-letter {
+    color: #000;
+}
+
+#main-logo #symbols {
+    color: #1abc9c;
+}
+
+.menu {
+    margin-top: 22px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    font-size: 16px;
+}
+
+li {
+    margin-left: 100px;
+}
+
+li a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #000;
+    padding: 5px;
+}
+
+li a:hover {
+    color: #1abc9c;
+}
+
+/*ABOUT APP*/
+.about-app {
+    justify-content: space-evenly;
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #1abc9c; 
+}
+
+.phone img {
+    width: 200px;
+}
+
+.description {
+    max-width: 45%;
+}
+
+.description p {
+    font-size: 18px;
+    color: #fff;
+}
+
+button {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    padding: 15px 25px;
+    border: 2px solid;
+    border-radius: 8px;
+    background-color: #ffffff00;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+button:hover {
+    display: inline-block;
+    color: #1abc9c;
+    text-decoration: none;
+    user-select: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*DEVELOPMENT*/
+.development {
+    margin: 50px 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;/*Для центровки элемента по перекрёстной оси*/
+    text-align: center;
+    max-width: 30%;
+}
+
+.icons {
+    padding: 15px 0;
+    background-color: #1abc9c;
+    width: 100px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+}
+
+.blocks p {
+    margin: 0px;
+}
+
+/*CONTACT*/
+.contact {
+    background-color: #16a085;
+    text-align: center;
+    padding-bottom: 50px;
+    color: #fff;
+}
+
+.contact h1 {
+    padding-top: 50px;
+}
+.contact-form {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+form {
+    display: inline-grid;
+}
+
+input {
+    margin: 3px;
+    height: 25px;
+    font-size: 18px;
+    font-family: 'Catamaran', sans-serif;
+}
+
+textarea {
+    margin: 3px;
+    resize: none;
+    width: 605px;
+    margin-left: 3px;
+    font-size: 18px;
+    font-family: 'Catamaran', sans-serif;
+}
+
+.questions {
+    margin: 15px 0;
+}
+
+.combo {
+    min-width: 50%;
+    max-width: 100%;
+}
+
+#month {
+    color: #808080;
+}
+
+.questions {
+    display: flex;
+}
+
+.questions span {
+    margin: 0 15px;
+}
+
+#bad , #so-so , #good {
+    margin: 0 5px 0 20px;
+}
+
+#color , #date , #time , #logo , #tentacles , #site-search , #url , #camp-week{
+    margin: 0 20px;
+}
+
+#reset {
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    width: 200px;
+    height: 50px;
+    border: 2px solid;
+    border-radius: 8px;
+    background-color: #ffffff00;
+    font-size: 20px;
+}
+
+#reset:hover {
+    color: #16a085;
+    text-decoration: none;
+    user-select: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#image {
+    width: 200px;
+    height: 50px;
+}
+
+input[type=submit] {
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    width: 200px;
+    height: 50px;
+    border: 2px solid;
+    border-radius: 8px;
+    background-color: #ffffff00;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-left: 34%;
+}
+
+input[type=submit]:hover {
+    color: #16a085;
+    text-decoration: none;
+    user-select: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-left: 34%;
+    cursor: pointer;
+}
+
+#toTop {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    display:none;
+    font-family: verdana;
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    padding: 15px 25px;
+    border: 2px solid;
+    border-radius: 8px;
+    background-color: #ffffff00;
+    margin-top: 30px;
+}
+
+#toTop:hover{
+    color: #1abc9c;
+    background-color: #fff;
+}
