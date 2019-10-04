@@ -1,0 +1,79 @@
+body {
+    background: linear-gradient(90deg, #FFC3F0, #FDF784);/*угол / сторона или угол наклона с помощью ключевого слова (пары ключевых слов), первый цвет, второй цвет и т.д.*/
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+
+#headline {
+    background-color: #fff;
+    padding: 10px;
+}
+
+h1 {
+    background: linear-gradient(128deg, #FFC3F0 34%, #FDF784 66%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #FFC3F0;
+    display: table;
+    margin: 0 auto;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/*TASK_1*/
+.task{
+    background-color: #fff;
+    margin: 35px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+input, textarea {
+    margin: 10px;
+    resize: none;
+}
+
+.button {
+    padding: 10px 20px;
+    text-decoration: none;
+    user-select: none;
+    background-color: #FDF784;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    transition: 0.3s;
+}
+
+.button:hover {
+    padding: 10px 20px;
+    text-decoration: none;
+    user-select: none;
+    background-color: #FFC3F0;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    outline:none; /*убираем синюю обводку*/
+}
