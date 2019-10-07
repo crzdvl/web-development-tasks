@@ -59,6 +59,7 @@ function uploadElements(elements){
     container += '</tr>';
   });
   tableContainer.innerHTML = container;
+};nerHTML = container;
 };
 
 function countPrice(elements){  
