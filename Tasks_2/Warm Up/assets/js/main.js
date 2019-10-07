@@ -37,51 +37,63 @@ button_3.onclick = function() {
 		a = timeString.split(':'); // split it at the colons
 		secondss = (+a[0]) * 3600 + (+a[1]) * 60 + (+a[2]); 
 
-	document.getElementById("secondss").innerHTML = secondss;
+	document.getElementById("seconds").innerHTML = secondss;
 }
 
 
-window.onload = function () {
 button_4.onclick = function() {
-	let date1 = document.dateForm.date1,
-		date2 = document.dateForm.date2,
-		currentDate = [];
+		let date1 = document.dateForm.date1,
+			date2 = document.dateForm.date2,
+			currentDate = [];
 
-	date1 = new Date(date1.value);
-	date2 = new Date(date2.value);
-	
-	if (date1 > date2) {
-	[date1 , date2] = [date2, date1];
+		date1 = new Date(date1.value);
+		date2 = new Date(date2.value);
+		
+		if (date1 > date2) {
+			[date1 , date2] = [date2, date1];
+		}
+
+		currentDate['day'] = date2.getDate() - date1.getDate();
+		currentDate['month'] = date2.getMonth() - date1.getMonth();
+		currentDate['year'] = date2.getFullYear() - date1.getFullYear();
+
+		if (date1.getHours() > date2.getHours()){
+			currentDate['hour']   = date1.getHours()    - date2.getHours();
+		}else {
+			currentData['hour']   = date2.getHours()    - date1.getHours();
+		}
+
+		if (date1.getMinutes() > date2.getMinutes()){
+			currentDate['minute'] = date1.getMinutes()  - date2.getMinutes(); 
+		}else {
+			currentDate['minute'] = date2.getMinutes()  - date1.getMinutes();
+		}
+
+		document.getElementById("abcdef").innerHTML = ' Прошло дней ' + currentDate['day'] + ' Прошло месяцев: ' + currentDate['month'] +
+			' Прошло лет: ' + currentDate['year'] + ' Прошло часов: ' + currentDate['hour'] +
+			' Прошло минут: ' + currentDate['minute'];
 	}
 
-	currentDate['day'] = date2.getDate() - date1.getDate();
-	currentDate['month'] = date2.getMonth() - date1.getMonth();
-	currentDate['year'] = date2.getFullYear() - date1.getFullYear();
-	currentDate['hour'] = date2.getHours() - date1.getHours();
-	currentDate['minute'] = date2.getMinutes() - date1.getMinutes();   
-	
-	document.getElementById('pseconds').innerHTML = ' Прошло дней ' + currentDate['day'] + ' Прошло месяцев: ' + currentDate['month'] +
-		   ' Прошло лет: ' + currentDate['year'] + ' Прошло часов: ' + currentDate['hour'] +
-		   ' Прошло минут: ' + currentDate['minute'];
-}
-}
 
 button_5.onclick = function() { 
-	let a = document.getElementById("num").value;
+	let a = document.getElementById("num1").value;
+	let b = document.getElementById("num2").value;
+	let tableContainer = document.getElementById('tableResult');
 
-	document.write("<table border='1' width='300' height='300'>");
+	let container = "<table border='1' width='300' height='300'>";
 	for(let i=1; i<= a; i++) {
-		document.write("</tr>");
-		for(let j=1; j<= a; j++) {
+		container += "</tr>";
+		for(let j=1; j<= b; j++) {
 			if ((i+j)%2!=0){
-			document.write("<td bgcolor='white'></td>");
+				container += "<td bgcolor='white'></td>";
 			}
 			else {
-			document.write("<td bgcolor='black'></td>");
+				container += "<td bgcolor='black'></td>";
 			}}
-			document.write("</tr>");
+			container += "</tr>";
 	}
-	document.write("</table>");
+	container += "</table>";
+	tableContainer.innerHTML = container;
 }
 
 
@@ -107,8 +119,7 @@ button_6.onclick = function() {
 	for(let i = 0; i < information.length; i++){
 	 if(information[i].match(urlRegexpFirst) || information[i].match(urlRegexpSecond) || information[i].match(ipRegexp) ) {
 	 } else {
-	  console.log('delete' + information[i]);
-	  delete information[i]; //.splice(i, i); //начиная с позиции 1, удалить 1 элемент
+	  	delete information[i]; //.splice(i, i); //начиная с позиции 1, удалить 1 элемент
 	 }
 	}
 
@@ -116,7 +127,7 @@ button_6.onclick = function() {
 
 	for (let i = 0; i < information.length; i++) {
 	 if(information[i] != x){
-	  link = a.cloneNode();
+	  	link = a.cloneNode();
 		link.href = information[i];
 		link.innerHTML = information[i] + '</br>';
 		document.getElementById('list').appendChild(link);
