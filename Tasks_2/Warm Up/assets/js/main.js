@@ -69,7 +69,7 @@ button_4.onclick = function() {
 			currentDate['minute'] = date2.getMinutes()  - date1.getMinutes();
 		}
 
-		document.getElementById("abcdef").innerHTML = ' Прошло дней ' + currentDate['day'] + ' Прошло месяцев: ' + currentDate['month'] +
+		document.getElementById("datesDifference").innerHTML = ' Прошло дней ' + currentDate['day'] + ' Прошло месяцев: ' + currentDate['month'] +
 			' Прошло лет: ' + currentDate['year'] + ' Прошло часов: ' + currentDate['hour'] +
 			' Прошло минут: ' + currentDate['minute'];
 	}
