@@ -41,7 +41,6 @@ let tableContainer = document.getElementById('table-information'),
     i = 0;
 
 uploadElements(GOODS);
-countPrice(GOODS);
 
 window.onload = function () {
   sortCategory();
@@ -49,7 +48,9 @@ window.onload = function () {
 }
 
 function uploadElements(elements){  
-  let container = '<tbody>';
+  let container = '<tbody>',
+      totalPrice = 0,
+      total = document.getElementById('total');
   elements.forEach(function (elem) {
     container += '<tr>';
     container += '<td>' + elem.category + '</td>';
@@ -57,18 +58,10 @@ function uploadElements(elements){
     container += '<td>' + elem.amount   + '</td>';
     container += '<td>' + elem.price    + '</td>';
     container += '</tr>';
-  });
-  tableContainer.innerHTML = container;
-};nerHTML = container;
-};
-
-function countPrice(elements){  
-  let totalPrice = 0,
-      total = document.getElementById('total');
-  elements.forEach(function (elem) {
     totalPrice += elem.price * elem.amount;
   });
   total.innerHTML = totalPrice + '¥';
+  tableContainer.innerHTML = container;
 };
 
 function sortCategory() {
@@ -139,25 +132,26 @@ function nameReverse() {
 }
 
 filter.onclick = function() {
-let filterCategory = document.getElementById('filter').value;
-if (filterCategory != '') {
-  for (let i = 0; i < GOODS.length; i++) {
-      if(GOODS[i].category.trim() === filterCategory.trim()){
+  let filterCategory = document.getElementById('filter').value,
+      i;
+  if (filterCategory) {
+    for (i = 0; i < GOODS.length; i++) {
+        if(GOODS[i].category.trim() === filterCategory.trim()){
+          document.querySelectorAll('tbody tr')[i].style.display = 'table-row';
+        } else {
+          document.querySelectorAll('tbody tr')[i].style.display = 'none';
+        }
+    }
+  } else {
+      for (i = 0; i <= GOODS.length; i++) {
         document.querySelectorAll('tbody tr')[i].style.display = 'table-row';
-      } else {
-        document.querySelectorAll('tbody tr')[i].style.display = 'none';
       }
   }
-} else {
-    for (let j = 0; j <= GOODS.length; j++) {
-      document.querySelectorAll('tbody tr')[j].style.display = 'table-row';
-    }
-}
 }
 
 document.getElementById('search').oninput = function () {
   let val = this.value.trim();
-  if (val != '') {  
+  if (val) {  
     for (let i = 0; i < GOODS.length; i++) {
       if (GOODS[i].name.toUpperCase().search(val.toUpperCase()) == -1) {
         document.querySelectorAll('tbody tr')[i].style.display = 'none';
