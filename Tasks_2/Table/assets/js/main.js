@@ -61,6 +61,7 @@ function uploadElements(elements){
     container += '</tr>';
     totalPrice += elem.price * elem.amount;
   });
+  container += '</tbody>';
   total.innerHTML = totalPrice + '¥';
   tableContainer.innerHTML = container;
 };
