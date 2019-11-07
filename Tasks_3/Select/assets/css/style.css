@@ -1,0 +1,101 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+div#selectBox {
+	width: 250px;
+	position: relative;
+    border-radius: 10px;
+    border: solid 1px #dedede;
+	background-color: #fff;
+	color: #333;
+	cursor: pointer;
+	overflow: hidden;
+	transition: .3s;
+}
+
+#image {
+    height: 20px;
+}
+
+div#selectBox p.valueTag {
+	padding: 15px;
+	cursor: pointer;
+	transition: .2s;
+    border-bottom: solid 1px #dedede;
+    margin: 0;
+    color: #d5d5d5;
+    padding-left: 20px; 
+    font-weight: 700;
+}
+
+div#selectBox > img.arrow {
+	position: absolute;
+	right: 0;
+	width: 20px;
+	padding: 15px;
+}
+
+/*
+        для пользователей Safari, Chrome и Opera приятный бонус — стилизованный скролл-бар. 
+*/
+::-webkit-scrollbar {
+	background: transparent;
+	width: 0.5em;
+	position: absolute;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+	position: absolute;
+	z-index: -2;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 100px;
+	background: #888;
+}
+
+ul#selectMenuBox {
+ background: #fff;
+ transition: .3s;
+ width: 100%;
+ height: 200px;
+ overflow-y: auto;
+ overflow-x: hidden !important;
+ position: absolute;
+ margin-top: 00px;
+ display: block;
+ padding: 0;
+}
+ul#selectMenuBox > li {
+	display: block;
+	padding: 10px;
+	border-radius: 00px;
+	cursor: pointer;
+}
+ul#selectMenuBox > li.option {
+	color: gray;
+    padding: 10px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+
+ul#selectMenuBox > li.option:hover {
+	color: #333;
+	background: #e1e1e1;
+	transition: .2s;
+}
+
+li img {
+    padding: 0 15px 0 10px;
+}
+
+li p {
+    color: #4d4d4d;
+}
+
+.selected {
+    color: #4d4d4d !important;
+}
