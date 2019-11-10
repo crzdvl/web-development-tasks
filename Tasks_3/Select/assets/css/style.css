@@ -70,7 +70,7 @@ ul#selectMenuBox {
 ul#selectMenuBox > li {
 	display: block;
 	padding: 10px;
-	border-radius: 00px;
+	border-radius: 0px;
 	cursor: pointer;
 }
 ul#selectMenuBox > li.option {
@@ -88,7 +88,7 @@ ul#selectMenuBox > li.option:hover {
 	transition: .2s;
 }
 
-li img {
+.images {
     padding: 0 15px 0 10px;
 }
 
