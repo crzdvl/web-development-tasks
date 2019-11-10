@@ -2,9 +2,10 @@
 $(document).ready(function(){
     $("#menu").on("click","a", function (event) {
         event.preventDefault();
-        let id  = $(this).attr('href'),
+        var id  = $(this).attr('href'),
             top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
+    });
 });
 
 //arrow
@@ -18,5 +19,4 @@ $(function() {
         $('#toTop').click(function() {  
         $('body,html').animate({scrollTop:0},800); 
     }); 
-});
 });
