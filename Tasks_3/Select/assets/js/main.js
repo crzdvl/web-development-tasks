@@ -1,24 +1,27 @@
 const USERS = [
   { 
-    name: 'House Arryn',
-    image: 'Images/House_Arryn.png'
+    name: 'Melissa Monoban',
+    image: 'assets/img/Mellissa_Monoban.png'
   },
   { 
-    name: 'House Arryn',
-    image: 'Images/House_Arryn.png'
+    name: 'Christian',
+    image: 'assets/img/Christian.png'
   },
   { 
-    name: 'House Arryn',
-    image: 'Images/House_Arryn.png'
+    name: 'Jenny Hess',
+    image: 'assets/img/Jenny_Hess.png'
   },
   { 
-    name: 'House Arryn',
-    image: 'Images/House_Arryn.png'
+    name: 'Matt',
+    image: 'assets/img/Matt.png'
   },
+  { name: 'Elliot Fu',
+    image: 'assets/img/Elliot_Fu.png'
+  }
 ];
 
-$('.list-group-item').each(function() {
-    USERS.push($(this));
+$.each(USERS, function(){
+  $( "#selectMenuBox" ).append( "<li class=option ><img src=" + this.image + " class='images' height='20px'/><p>" + this.name + "</p></li>" );
 });
 
 (function( $ ) {
@@ -44,8 +47,12 @@ $('.list-group-item').each(function() {
           $('#selectBox').height(selectDefaultHeight);
          $('img.arrow').css({transform: rotateDefault});
           $('p.valueTag').text($(this).text()).addClass("selected");
-          $('#image').attr("src", this);          
+
+          /*let z = $(this).find("img").attr('src');
+          console.log(z);*/
+          $('p.valueTag').prepend($("<img src=" + $(this).find("img").attr('src') + " class='images' height='20px'/>")) ;
         });
     };
-  })( jQuery );
+ })( jQuery );
+
   $('selector').selectbox();
