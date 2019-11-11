@@ -27,11 +27,11 @@ $.each(USERS, function(){
 (function( $ ) {
     $.fn.selectbox = function() {
       
-      var selectDefaultHeight = $('#selectBox').height();
-      var rotateDefault = "rotate(0deg)";
+      let selectDefaultHeight = $('#selectBox').height(),
+          rotateDefault = "rotate(0deg)";
      
           $('#selectBox > p.valueTag').click(function() {
-            var currentHeight = $('#selectBox').height();
+            let currentHeight = $('#selectBox').height();
             if (currentHeight < 100 || currentHeight == selectDefaultHeight) {
                 $('#selectBox').height("250px"); 
                 $('img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
@@ -47,9 +47,6 @@ $.each(USERS, function(){
           $('#selectBox').height(selectDefaultHeight);
          $('img.arrow').css({transform: rotateDefault});
           $('p.valueTag').text($(this).text()).addClass("selected");
-
-          /*let z = $(this).find("img").attr('src');
-          console.log(z);*/
           $('p.valueTag').prepend($("<img src=" + $(this).find("img").attr('src') + " class='images' height='20px'/>")) ;
         });
     };
