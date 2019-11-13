@@ -17,7 +17,7 @@
             <form action="">
                 <input id="value1" type="number">
                 <input id="value2" type="number">
-                <input type="button" class="button" id="button" value="Кнопка"/>
+                <input type="button" class="button" id="button" value="Посчитать"/>
             </form>
             
             <div class="container">
@@ -27,8 +27,8 @@
         <section class="task">
             <p>Пользователь вводит время в секундах. Вывести в формате: hh:mm:ss (01:05:20)</p>
             <form>
-                <input id="userSeconds" type="number" placeholder="60">
-                <input type="button" class="button" id="button_2" value="Кнопка"/>
+                <input id="userSeconds" type="text" placeholder="60">
+                <input type="button" class="button" maxlength="13" id="button_2" value="Вывести"/>
             </form>
             <div class="container">
                 <p id="timeString"></p>
@@ -38,7 +38,7 @@
             <p>Пользователь вводит время в формате hh:mm:ss, вывести количество секунд.</p>
             <form>
                 <input id="appt-time" type="time" name="appt-time" step="2">
-                <input type="button" class="button" id="button_3" value="Кнопка"/>
+                <input type="button" class="button" id="button_3" value="Вывести"/>
             </form>
             <div class="container">
                 <p id="seconds"></p>
@@ -49,7 +49,7 @@
             <form name="dateForm">
                 <input type='datetime-local' name='date1'>
                 <input type='datetime-local' name='date2'>
-                <input type='button' class="button" id='button_4' value="Кнопка"/>
+                <input type='button' class="button" id='button_4' value="Вычислить"/>
             </form>
             <div class="container">
                 <p id="datesDifference"></p>
@@ -60,7 +60,7 @@
                 <form>
                     <input type="number" id="num1" size="3" name="num1" placeholder="8">
                     <input type="number" id="num2" size="3" name="num2" placeholder="8">
-                    <input type="button" class="button" id="button_5" value="Кнопка"/>
+                    <input type="button" class="button" id="button_5" value="Показать"/>
                 </form>
                 <div class="container">
                     <p>Table = </p><div id="tableResult"></div>
@@ -80,7 +80,7 @@
             <form>
                 <textarea name="" id="text" cols="30" rows="5" placeholder="Текст"></textarea>
                 <input type="text" placeholder="RegExp" id="regexp" />
-                <input type="button" class="button" id="button_7" value="Кнопка"/>
+                <input type="button" class="button" id="button_7" value="Проверить"/>
             </form>
             <p id="newText"></p>
         </section>
