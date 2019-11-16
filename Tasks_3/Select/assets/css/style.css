@@ -37,19 +37,18 @@ img.arrow {
 	padding: 0 15px;
 }
 
-/*
-        для пользователей Safari, Chrome и Opera приятный бонус — стилизованный скролл-бар. 
-*/
 ::-webkit-scrollbar {
 	background: transparent;
 	width: 0.5em;
 	position: absolute;
 }
+
 ::-webkit-scrollbar-track {
 	background: transparent;
 	position: absolute;
 	z-index: -2;
 }
+
 ::-webkit-scrollbar-thumb {
 	border-radius: 100px;
 	background: #888;
@@ -59,7 +58,6 @@ ul#selectMenuBox {
  background: #fff;
  transition: .3s;
  width: 100%;
- height: 200px;
  overflow-y: auto;
  overflow-x: hidden !important;
  position: absolute;
@@ -67,12 +65,14 @@ ul#selectMenuBox {
  display: block;
  padding: 0;
 }
+
 ul#selectMenuBox > li {
 	display: block;
 	padding: 10px;
-	border-radius: 0px;
+	border-radius: 0;
 	cursor: pointer;
 }
+
 ul#selectMenuBox > li.option {
 	color: gray;
     padding: 10px;
@@ -99,3 +99,12 @@ li p {
 .selected {
     color: #4d4d4d !important;
 }
+
+.arrow-active {
+	transform: rotate(0.5turn);
+}
+/*
+.arrow-passive {
+	transform: rotate(180deg);
+	
+}*/

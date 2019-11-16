@@ -1,4 +1,8 @@
 const USERS = [
+  {
+    name: 'Select Friend',
+    image: 'assets/img/user.png'
+  },
   { 
     name: 'Melissa Monoban',
     image: 'assets/img/Mellissa_Monoban.png'
@@ -21,35 +25,50 @@ const USERS = [
 ];
 
 $.each(USERS, function(){
-  $( "#selectMenuBox" ).append( "<li class=option ><img src=" + this.image + " class='images' height='20px'/><p>" + this.name + "</p></li>" );
+  $('#selectMenuBox').append( "<li class=option ><img src=" + this.image + " class='images' height='20px'/><p>" + this.name + "</p></li>" );
 });
 
 (function( $ ) {
     $.fn.selectbox = function() {
       
-      let selectDefaultHeight = $('#selectBox').height(),
-          rotateDefault = "rotate(0deg)";
-     
-          $('#selectBox > p.valueTag').click(function() {
-            let currentHeight = $('#selectBox').height();
-            if (currentHeight < 100 || currentHeight == selectDefaultHeight) {
-                $('#selectBox').height("250px"); 
-                $('img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
-            }
-  
-            if (currentHeight >= 250) {
-              $('#selectBox').height(selectDefaultHeight);
-              $('img.arrow').css({transform: rotateDefault});
-            }
-        });
-  
-        $('li.option').click(function() {
+      const selectDefaultHeight = $('#selectBox').height();
+      let countOfUsers = 0,
+          heightOfLi = 50;
+
+      $(document).mouseup(function (e) {
+        $('#selectBox').height(selectDefaultHeight);
+        $('img.arrow').removeClass('arrow-active');
+      });
+
+      for(let i = 0; i < USERS.length; ++i){
+        countOfUsers++;
+      }
+
+      $('#selectBox > p.valueTag').click(function() {
+        const currentHeight = $('#selectBox').height();
+        if (currentHeight < 100 || currentHeight == selectDefaultHeight) {
+          $('#selectBox').height(heightOfLi * countOfUsers + 'px'); 
+          $('img.arrow').addClass('arrow-active');
+        }
+        if (currentHeight >= selectDefaultHeight * countOfUsers) {
           $('#selectBox').height(selectDefaultHeight);
-         $('img.arrow').css({transform: rotateDefault});
-          $('p.valueTag').text($(this).text()).addClass("selected");
-          $('p.valueTag').prepend($("<img src=" + $(this).find("img").attr('src') + " class='images' height='20px'/>")) ;
-        });
+          $('img.arrow').removeClass('arrow-active');
+        }
+      });
+  
+      $('li.option').click(function() {
+        $('#selectBox').height(selectDefaultHeight);
+        $('img.arrow').addClass('arrow-active');
+        $('p.valueTag').text($(this).text()).addClass('selected');
+        $('p.valueTag').prepend($("<img src=" + $(this).find("img").attr('src') + " class='images' height='20px'/>")) ;
+      });
     };
+
  })( jQuery );
 
   $('selector').selectbox();
+
+
+
+
+  

@@ -139,7 +139,7 @@ button:hover {
 }
 
 .blocks p {
-    margin: 0px;
+    margin: 0;
 }
 
 /*CONTACT*/
@@ -174,7 +174,6 @@ textarea {
     margin: 3px;
     resize: none;
     width: 605px;
-    margin-left: 3px;
     font-size: 18px;
     font-family: 'Catamaran', sans-serif;
 }
@@ -277,7 +276,7 @@ input[type=submit]:hover {
     right: 10px;
     cursor: pointer;
     display:none;
-    font-family: verdana;
+    font-family: verdana, sans-serif;
     color: #1abc9c;
     text-decoration: none;
     user-select: none;
