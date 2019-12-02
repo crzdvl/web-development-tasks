@@ -24,49 +24,52 @@ const USERS = [
   }
 ];
 
-$.each(USERS, function(){
-  $('#selectMenuBox').append( "<li class=option ><img src=" + this.image + " class='images' height='20px'/><p>" + this.name + "</p></li>" );
-});
+$(function() {
+  $.each(USERS, function(){
+    $('#selectMenuBox').append(
+      `<li class='option'>
+        <img src= ${this.image} class='images' height='20px'/>
+        <p> ${this.name} </p>
+      </li>`);
+  });
 
-(function( $ ) {
-    $.fn.selectbox = function() {
+  $.fn.selectbox = function() {
       
-      const selectDefaultHeight = $('#selectBox').height();
-      let countOfUsers = 0,
-          heightOfLi = 50;
+    const selectDefaultHeight = $('#selectBox').height();
+    let countOfUsers = 0,
+        heightOfLi = 50;
 
-      $(document).mouseup(function (e) {
+    $(document).mouseup(function (e) {
+      $('#selectBox').height(selectDefaultHeight);
+      $('img.arrow').removeClass('arrow-active');
+    });
+
+    for(let i = 0; i < USERS.length; ++i){
+      countOfUsers++;
+    }
+
+    $('#selectBox > p.valueTag').click(function() {
+      const currentHeight = $('#selectBox').height();
+      if (currentHeight < 100 || currentHeight == selectDefaultHeight) {
+        $('#selectBox').height(heightOfLi * countOfUsers + 'px'); 
+        $('img.arrow').addClass('arrow-active');
+      }
+      if (currentHeight >= selectDefaultHeight * countOfUsers) {
         $('#selectBox').height(selectDefaultHeight);
         $('img.arrow').removeClass('arrow-active');
-      });
-
-      for(let i = 0; i < USERS.length; ++i){
-        countOfUsers++;
       }
+    });
 
-      $('#selectBox > p.valueTag').click(function() {
-        const currentHeight = $('#selectBox').height();
-        if (currentHeight < 100 || currentHeight == selectDefaultHeight) {
-          $('#selectBox').height(heightOfLi * countOfUsers + 'px'); 
-          $('img.arrow').addClass('arrow-active');
-        }
-        if (currentHeight >= selectDefaultHeight * countOfUsers) {
-          $('#selectBox').height(selectDefaultHeight);
-          $('img.arrow').removeClass('arrow-active');
-        }
-      });
-  
-      $('li.option').click(function() {
-        $('#selectBox').height(selectDefaultHeight);
-        $('img.arrow').addClass('arrow-active');
-        $('p.valueTag').text($(this).text()).addClass('selected');
-        $('p.valueTag').prepend($("<img src=" + $(this).find("img").attr('src') + " class='images' height='20px'/>")) ;
-      });
-    };
-
- })( jQuery );
+    $('li.option').click(function() {
+      $('#selectBox').height(selectDefaultHeight);
+      $('img.arrow').addClass('arrow-active');
+      $('p.valueTag').text($(this).text()).addClass('selected');
+      $('p.valueTag').prepend($(`<img src= ${$(this).find('img').attr('src')} class='images' height='20px'/>`));
+    });
+  };
 
   $('selector').selectbox();
+});
 
 
 
