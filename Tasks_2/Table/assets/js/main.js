@@ -145,7 +145,7 @@ function nameReverse() {
   return i;
 }
 
-filter.onclick = function() {
+filter.onchange = function() {
   let filterCategory = document.getElementById('filter').value,
       totalPrice = 0,
       total = document.getElementById('total'),
