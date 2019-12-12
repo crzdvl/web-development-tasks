@@ -120,8 +120,8 @@ const ATM = {
     // log out
     logout() {
         if(this.isAuth){
-            this.ATMLogs.push(id + " logged out.");
-            console.log(this.isAuth);
+            this.isAuth = false;
+            this.ATMLogs.push(this.users[this.currentUser].id + " logged out.");
             console.log("You've sucessfully logged out.");
        }
     }
