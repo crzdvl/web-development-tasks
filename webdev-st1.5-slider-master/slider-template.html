@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slider</title>
+  <style>
+    .slider {
+      text-align: center; 
+    }
+
+    .slider ul {
+      padding: 0;
+    }
+    
+    .slider .slider-indicators {
+      padding: 0;
+    }
+    
+    .slider .slider-previews li {
+      cursor: pointer;
+      display: inline-block;
+      list-style-type: none;
+      margin: 0 1rem;
+      vertical-align: middle;
+      border: 5px solid transparent;
+    }
+    
+    .slider .slider-previews li img {
+      display: block;
+    }
+    
+    .slider .slider-previews li.current {
+      border: 5px solid rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div id="slider" class="slider">
+      <div class="slider-current">
+        <img src="https://picsum.photos/600/400/?image=1080" alt="0">
+      </div>
+      <ul class="slider-previews"></ul>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="slider-template.js"></script>
+</body>
+</html>
