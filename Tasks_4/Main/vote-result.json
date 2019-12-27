@@ -1,1 +1,1 @@
-{"cols":[{"id":"","label":"Structure","pattern":"","type":"string"},{"id":"","label":"Slices","pattern":"","type":"number"}],"rows":[{"c":[{"v":"To fail","f":null},{"v":34,"f":null}]},{"c":[{"v":"Not try","f":null},{"v":16,"f":null}]},{"c":[{"v":"Not sure","f":null},{"v":13,"f":null}]}]}
+{"Not try":1,"Not sure":1,"To fail":2}
